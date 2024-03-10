@@ -103,7 +103,8 @@ html {
     font-size: 16px;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
 }
@@ -126,7 +127,7 @@ header {
 
 .container {
     width: 80%;
-    min-height: 100vh; /* Use min-height instead of height */
+    min-height: 100vh;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
@@ -233,8 +234,9 @@ footer {
     padding: 20px;
     background-color: #333;
     color: #fff;
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: auto;
 }
+
 @media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
@@ -242,23 +244,33 @@ footer {
         display: flex;
         flex-direction: column;
     }
+
     .search {
         grid-column: 1 / 3;
     }
+
     .main-block {
         grid-column: 1 / 3;
     }
+
     .forecast {
         grid-column: 1 / 3;
         grid-row: 3 / 4;
     }
-    .low, .extra {
+
+    .low,
+    .extra {
         grid-column: 1 / 3;
     }
-    .weather__info h2, .forecast h2, .header__title {
+
+    .weather__info h2,
+    .forecast h2,
+    .header__title {
         font-size: 2.5rem;
     }
-    .weather__info p, .measure .info p {
+
+    .weather__info p,
+    .measure .info p {
         font-size: 1.5rem;
     }
 }
@@ -267,17 +279,34 @@ footer {
     .container {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px auto auto auto auto 50px; /* Adjusted for footer */
+        grid-template-rows: auto;
+        grid-gap: 1rem;
     }
-    .search, .main-block, .forecast, .low, .extra {
-        grid-column: 1 / 2;
+
+    .search,
+    .main-block,
+    .forecast,
+    .low,
+    .extra,
+    footer {
+        grid-column: 1;
     }
-    .weather__info h2, .forecast h2, .header__title {
+
+    footer {
+        grid-row: auto;
+    }
+
+    .weather__info h2,
+    .forecast h2,
+    .header__title {
         font-size: 2rem;
     }
-    .weather__info p, .measure .info p {
+
+    .weather__info p,
+    .measure .info p {
         font-size: 1rem;
     }
+
     footer {
         grid-row: 6 / 7;
     }
